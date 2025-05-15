@@ -1,8 +1,8 @@
 package fr.brahimtahiri.educationsoft.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -10,6 +10,9 @@ import java.util.List;
 @Table(name = "classgroups")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Classgroup {
 
     @Id
@@ -20,6 +23,7 @@ public class Classgroup {
     private String denomination;
 
     @OneToMany(mappedBy = "classgroup", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JsonIgnore
     private List<Student> students;
 
 }
