@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service de gestion des classes (classgroups).
+ */
 @Service
 @AllArgsConstructor
 public class ClassgroupService {
@@ -48,7 +51,7 @@ public class ClassgroupService {
     /**
      * Met à jour une classe existante avec les nouvelles données fournies.
      *
-     * @param id l'identifiant de la classe à mettre à jour
+     * @param id            l'identifiant de la classe à mettre à jour
      * @param newClassgroup un objet {@link ClassgroupDTO} contenant les nouvelles informations de la classe
      * @return l'instance mise à jour de {@link Classgroup}
      * @throws ResourceNotFoundException si aucune classe n'est trouvée avec l'identifiant fourni

@@ -8,11 +8,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "classgroups")
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 public class Classgroup {
 
     @Id

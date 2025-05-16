@@ -1,11 +1,13 @@
 package fr.brahimtahiri.educationsoft.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "subjects")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Getter
 @Setter
 public class Subject {
@@ -14,7 +16,7 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false, length = 32)
+    @Column(unique = true, nullable = false, length = 64)
     private String denomination;
 
 }

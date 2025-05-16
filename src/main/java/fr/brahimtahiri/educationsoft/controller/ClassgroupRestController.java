@@ -44,7 +44,7 @@ public class ClassgroupRestController {
      * Crée une nouvelle classe à partir des données fournies.
      *
      * @param newClassgroup un objet {@link ClassgroupDTO} contenant les informations nécessaires à la création de la classe.
-     * L'objet est validé avant traitement.
+     *                      L'objet est validé avant traitement.
      * @return l'instance de la classe {@link Classgroup} nouvellement créée.
      */
     @PostMapping
@@ -55,7 +55,7 @@ public class ClassgroupRestController {
     /**
      * Met à jour une classe existante avec les nouvelles données fournies.
      *
-     * @param id l'identifiant de la classe à mettre à jour
+     * @param id            l'identifiant de la classe à mettre à jour
      * @param newClassgroup un objet {@link ClassgroupDTO} contenant les nouvelles informations de la classe.
      *                      L'objet est validé avant traitement.
      * @return l'instance de la classe {@link Classgroup} mise à jour

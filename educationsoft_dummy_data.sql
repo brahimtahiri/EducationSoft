@@ -1,7 +1,7 @@
 /*
 	Données factices de la base de données Educationsoft.
 
-	Dernière mise à jour : 15/05/2025
+	Dernière mise à jour : 16/05/2025
 */
 
 /* Données de la table "classgroups" */
@@ -26,3 +26,40 @@ VALUES ('6ème A'),
        ('3ème C'),
        ('3ème D'),
        ('3ème E');
+
+/* Données de la table "subjects" */
+INSERT INTO subjects (denomination)
+VALUES
+-- Collège
+('Français'),
+('Mathématiques'),
+('Histoire-Géographie'),
+('Sciences de la Vie et de la Terre'),
+('Technologie'),
+('Éducation musicale'),
+('Arts plastiques'),
+('Éducation physique et sportive'),
+('Physique-Chimie'),
+('Langue vivante 1 : Anglais'),
+('Langue vivante 2 : Espagnol'),
+('Enseignement moral et civique'),
+
+-- Lycée
+('Philosophie'),
+('Économie'),
+('Sciences économiques et sociales'),
+('Sciences de l’ingénieur'),
+('Littérature'),
+('Langue vivante approfondie'),
+('Langues et cultures de l’Antiquité'),
+('Numérique et sciences informatiques'),
+('Mathématiques expertes'),
+('Mathématiques complémentaires'),
+('Physique'),
+('Chimie'),
+('Biologie-Écologie'),
+('Histoire-Géographie-Géopolitique-Sciences Politiques'),
+('Humanités, Littérature et Philosophie'),
+('Sciences et techniques sanitaires et sociales'),
+('Management et gestion');
+
