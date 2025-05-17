@@ -55,7 +55,7 @@ public class SubjectRestController {
     /**
      * Met à jour une matière existante avec les nouvelles données fournies.
      *
-     * @param id l'identifiant de la matière à mettre à jour
+     * @param id         l'identifiant de la matière à mettre à jour
      * @param newSubject un objet {@link SubjectDTO} contenant les nouvelles informations de la matière.
      *                   L'objet est validé avant traitement.
      * @return l'instance de la matière {@link Subject} mise à jour

@@ -1,7 +1,7 @@
 /*
 	Données factices de la base de données Educationsoft.
 
-	Dernière mise à jour : 16/05/2025
+	Dernière mise à jour : 17/05/2025
 */
 
 /* Données de la table "classgroups" */
@@ -63,3 +63,102 @@ VALUES
 ('Sciences et techniques sanitaires et sociales'),
 ('Management et gestion');
 
+/* Données de la table "users" */
+INSERT INTO users (firstname, lastname, email, address, phone_number, username, password, role)
+VALUES ('Administrateur', '', 'contact@brahimtahiri.fr', '', '', 'administrator', 'administrator', 'ADMINISTRATOR'),
+       ('Jean', 'Durand', 'jean.durand@example.com', '15 rue Danielle Casanova', '0601020304', 'jean.durand1',
+        'password123', 'TEACHER'),
+       ('Sophie', 'Lemoine', 'sophie.lemoine@example.com', '25 avenue Pierre-de-Coubertin', '0611121314',
+        'sophie.lemoine2', 'password456', 'TEACHER'),
+       ('Paul', 'Rousseau', 'paul.rousseau@example.com', '12 rue des Grands-Champs', '0622232425', 'paul.rousseau3',
+        'password789', 'TEACHER'),
+       ('Claire', 'Morel', 'claire.morel@example.com', '963 boulevard du Savoir', '0633343536', 'claire.morel4',
+        'password321', 'TEACHER'),
+       ('Antoine', 'Gauthier', 'antoine.gauthier@example.com', '147 place Magenta', '0644454647', 'antoine.gauthier5',
+        'password654', 'TEACHER'),
+       ('Marie', 'Fournier', 'marie.fournier@example.com', '30 avenue des Lumières', '0655565758', 'marie.fournier6',
+        'password741', 'TEACHER'),
+       ('Lucas', 'Bernard', 'lucas.bernard@example.com', '22 boulevard Saint-Michel', '0666676869', 'lucas.bernard7',
+        'password852', 'TEACHER'),
+       ('Élise', 'Dubois', 'elise.dubois@example.com', '18 rue de la République', '0677787980', 'elise.dubois8',
+        'password963', 'TEACHER'),
+       ('Noah', 'Chevalier', 'noah.chevalier@example.com', '45 place du Commerce', '0688899091', 'noah.chevalier9',
+        'password147', 'TEACHER'),
+       ('Camille', 'Renard', 'camille.renard@example.com', '78 allée des Chênes', '0699900011', 'camille.renard10',
+        'password258', 'TEACHER'),
+       ('Alice', 'Dupont', 'alice.dupont@example.com', '123 Rue Principale', '0601020304', 'alice.dupont1',
+        'password123', 'STUDENT'),
+       ('Louis', 'Martin', 'louis.martin@example.com', '456 Rue Secondaire', '0611121314', 'louis.martin2',
+        'password456', 'STUDENT'),
+       ('Emma', 'Bernard', 'emma.bernard@example.com', '789 Avenue Centrale', '0622232425', 'emma.bernard3',
+        'password789', 'STUDENT'),
+       ('Noah', 'Lefevre', 'noah.lefevre@example.com', '321 Boulevard Sud', '0633343536', 'noah.lefevre4',
+        'password321', 'STUDENT'),
+       ('Chloé', 'Morel', 'chloe.morel@example.com', '654 Rue Nord', '0644454647', 'chloe.morel5', 'password654',
+        'STUDENT'),
+       ('Hugo', 'Dubois', 'hugo.dubois@example.com', '741 Rue Ouest', '0655565758', 'hugo.dubois6', 'password741',
+        'STUDENT'),
+       ('Manon', 'Rousseau', 'manon.rousseau@example.com', '852 Avenue Est', '0666676869', 'manon.rousseau7',
+        'password852', 'STUDENT'),
+       ('Lucas', 'Fournier', 'lucas.fournier@example.com', '963 Place Centrale', '0677787980', 'lucas.fournier8',
+        'password963', 'STUDENT'),
+       ('Sophie', 'Gauthier', 'sophie.gauthier@example.com', '147 Rue Verte', '0688899091', 'sophie.gauthier9',
+        'password147', 'STUDENT'),
+       ('Nathan', 'Chevalier', 'nathan.chevalier@example.com', '258 Avenue Bleue', '0699900011', 'nathan.chevalier10',
+        'password258', 'STUDENT'),
+       ('Léa', 'Perrin', 'lea.perrin@example.com', '369 Boulevard Rouge', '0601112233', 'lea.perrin11', 'password369',
+        'STUDENT'),
+       ('Tom', 'Renard', 'tom.renard@example.com', '123 Rue Jaune', '0611223344', 'tom.renard12', 'password123',
+        'STUDENT'),
+       ('Juliette', 'Benoit', 'juliette.benoit@example.com', '654 Rue Blanche', '0622334455', 'juliette.benoit13',
+        'password654', 'STUDENT'),
+       ('Arthur', 'Leclerc', 'arthur.leclerc@example.com', '789 Avenue Orange', '0633445566', 'arthur.leclerc14',
+        'password789', 'STUDENT'),
+       ('Camille', 'Renaud', 'camille.renaud@example.com', '321 Boulevard Violette', '0644556677', 'camille.renaud15',
+        'password321', 'STUDENT'),
+       ('Élise', 'Dumont', 'elise.dumont@example.com', '654 Rue Grise', '0655667788', 'elise.dumont16', 'password654',
+        'STUDENT'),
+       ('Théo', 'Germain', 'theo.germain@example.com', '741 Rue Noire', '0666778899', 'theo.germain17', 'password741',
+        'STUDENT'),
+       ('Marie', 'Bailly', 'marie.bailly@example.com', '852 Rue Turquoise', '0677889900', 'marie.bailly18',
+        'password852', 'STUDENT'),
+       ('Antoine', 'Verdier', 'antoine.verdier@example.com', '963 Avenue Cyan', '0688990011', 'antoine.verdier19',
+        'password963', 'STUDENT'),
+       ('Victoria', 'Meunier', 'victoria.meunier@example.com', '147 Place Magenta', '0699001122', 'victoria.meunier20',
+        'password147', 'STUDENT');
+
+/* Données de la table "teachers" */
+INSERT INTO teachers (id)
+VALUES ('2'),
+       ('3'),
+       ('4'),
+       ('5'),
+       ('6'),
+       ('7'),
+       ('8'),
+       ('9'),
+       ('10'),
+       ('11');
+
+/* Données de la table "students" */
+INSERT INTO students (id, date_of_birth, classgroup_id)
+VALUES (12, '2005-06-15', 5),
+       (13, '2006-09-20', 12),
+       (14, '2004-12-05', 8),
+       (15, '2007-03-10', 15),
+       (16, '2005-07-25', 19),
+       (17, '2006-01-30', 10),
+       (18, '2004-11-15', 3),
+       (19, '2007-08-22', 17),
+       (20, '2005-05-10', 1),
+       (21, '2006-12-01', 11),
+       (22, '2004-09-09', 7),
+       (23, '2007-02-18', 6),
+       (24, '2005-08-30', 13),
+       (25, '2006-04-27', 20),
+       (26, '2004-06-14', 9),
+       (27, '2007-12-25', 14),
+       (28, '2005-10-06', 2),
+       (29, '2006-03-05', 16),
+       (30, '2004-07-19', 4),
+       (31, '2007-01-09', 18);

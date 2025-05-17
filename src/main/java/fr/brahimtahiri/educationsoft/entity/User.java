@@ -1,12 +1,13 @@
 package fr.brahimtahiri.educationsoft.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "users")
 @Inheritance(strategy = InheritanceType.JOINED)
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class User {
@@ -33,10 +34,16 @@ public class User {
     @Column(nullable = false, unique = true, length = 34)
     private String username;
 
+    @Setter(AccessLevel.NONE)
     @Column(nullable = false)
     private String password;
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    public void setPassword(String password) {
+        System.out.printf("%n%s : Le mot de passe reste en clair car le module d'authentification est indisponible.%n", this.username);
+        this.password = password;
+    }
 
 }
