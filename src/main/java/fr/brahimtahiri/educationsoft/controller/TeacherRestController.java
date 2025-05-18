@@ -55,15 +55,15 @@ public class TeacherRestController {
     /**
      * Met à jour un enseignant existant avec les nouvelles données fournies.
      *
-     * @param id         l'identifiant de l'enseignant à mettre à jour
-     * @param newTeacher un objet {@link TeacherDTO} contenant les nouvelles informations de l'enseignant.
-     *                   L'objet est validé avant traitement.
+     * @param id             l'identifiant de l'enseignant à mettre à jour
+     * @param updatedTeacher un objet {@link TeacherDTO} contenant les nouvelles informations de l'enseignant.
+     *                       L'objet est validé avant traitement.
      * @return l'instance de l'enseignant {@link Teacher} mise à jour
      * @throws ResourceNotFoundException si aucun enseignant n'est trouvé avec l'identifiant fourni
      */
     @PutMapping(path = "/{id}")
-    public Teacher updateTeacher(@PathVariable Long id, @RequestBody @Valid TeacherDTO newTeacher) throws ResourceNotFoundException {
-        return this.teacherService.updateTeacher(id, newTeacher);
+    public Teacher updateTeacher(@PathVariable Long id, @RequestBody @Valid TeacherDTO updatedTeacher) throws ResourceNotFoundException {
+        return this.teacherService.updateTeacher(id, updatedTeacher);
     }
 
     /**

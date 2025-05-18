@@ -51,15 +51,15 @@ public class ClassgroupService {
     /**
      * Met à jour une classe existante avec les nouvelles données fournies.
      *
-     * @param id            l'identifiant de la classe à mettre à jour
-     * @param newClassgroup un objet {@link ClassgroupDTO} contenant les nouvelles informations de la classe
+     * @param id                l'identifiant de la classe à mettre à jour
+     * @param updatedClassgroup un objet {@link ClassgroupDTO} contenant les nouvelles informations de la classe
      * @return l'instance mise à jour de {@link Classgroup}
      * @throws ResourceNotFoundException si aucune classe n'est trouvée avec l'identifiant fourni
      */
-    public Classgroup updateClassgroup(Long id, ClassgroupDTO newClassgroup) throws ResourceNotFoundException {
+    public Classgroup updateClassgroup(Long id, ClassgroupDTO updatedClassgroup) throws ResourceNotFoundException {
         Classgroup currentClassgroup = this.getClassgroupById(id);
 
-        currentClassgroup.setDenomination(newClassgroup.getDenomination());
+        currentClassgroup.setDenomination(updatedClassgroup.getDenomination());
 
         return this.classgroupRepository.save(currentClassgroup);
     }

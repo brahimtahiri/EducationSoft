@@ -53,8 +53,8 @@ public class StudentService {
      */
 
     private Classgroup findClassgroupOrNull(StudentDTO newStudent) throws ResourceNotFoundException {
-        if (newStudent.getClassgroup() != null)
-            return this.classgroupService.getClassgroupById(newStudent.getClassgroup().getId());
+        if (newStudent.getClassgroupId() != null)
+            return this.classgroupService.getClassgroupById(newStudent.getClassgroupId());
         else return null;
     }
 
@@ -85,23 +85,23 @@ public class StudentService {
     /**
      * Met à jour un étudiant existant avec les nouvelles données fournies.
      *
-     * @param id         l'identifiant de l'étudiant à mettre à jour
-     * @param newStudent un objet {@link StudentDTO} contenant les nouvelles informations de l'étudiant
+     * @param id             l'identifiant de l'étudiant à mettre à jour
+     * @param updatedStudent un objet {@link StudentDTO} contenant les nouvelles informations de l'étudiant
      * @return l'instance mise à jour de {@link Student}
      * @throws ResourceNotFoundException si aucun étudiant n'est trouvé avec l'identifiant fourni ou si le groupe de classe spécifié est introuvable
      */
-    public Student updateStudent(Long id, StudentDTO newStudent) throws ResourceNotFoundException {
+    public Student updateStudent(Long id, StudentDTO updatedStudent) throws ResourceNotFoundException {
         Student currentStudent = this.getStudentById(id);
-        Classgroup classgroup = this.findClassgroupOrNull(newStudent);
+        Classgroup classgroup = this.findClassgroupOrNull(updatedStudent);
 
-        currentStudent.setFirstname(newStudent.getFirstname());
-        currentStudent.setLastname(newStudent.getLastname());
-        currentStudent.setEmail(newStudent.getEmail());
-        currentStudent.setAddress(newStudent.getAddress());
-        currentStudent.setPhoneNumber(newStudent.getPhoneNumber());
-        currentStudent.setUsername(newStudent.getUsername());
-        currentStudent.setPassword(newStudent.getPassword());
-        currentStudent.setDateOfBirth(newStudent.getDateOfBirth());
+        currentStudent.setFirstname(updatedStudent.getFirstname());
+        currentStudent.setLastname(updatedStudent.getLastname());
+        currentStudent.setEmail(updatedStudent.getEmail());
+        currentStudent.setAddress(updatedStudent.getAddress());
+        currentStudent.setPhoneNumber(updatedStudent.getPhoneNumber());
+        currentStudent.setUsername(updatedStudent.getUsername());
+        currentStudent.setPassword(updatedStudent.getPassword());
+        currentStudent.setDateOfBirth(updatedStudent.getDateOfBirth());
         currentStudent.setClassgroup(classgroup);
 
         return this.studentRepository.save(currentStudent);
@@ -115,6 +115,15 @@ public class StudentService {
      */
     public void deleteStudent(Long id) throws ResourceNotFoundException {
         this.studentRepository.delete(this.getStudentById(id));
+    }
+
+    /**
+     * Récupère la liste des étudiants qui ne sont associés à aucune classe.
+     *
+     * @return une liste contenant tous les étudiants dont la classe est null
+     */
+    public List<Student> getStudentsWithoutClassgroup() {
+        return this.studentRepository.findByClassgroupIsNull();
     }
 
     /**

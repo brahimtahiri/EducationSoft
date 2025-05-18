@@ -1,6 +1,5 @@
 package fr.brahimtahiri.educationsoft.dto;
 
-import fr.brahimtahiri.educationsoft.entity.Classgroup;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -34,9 +33,9 @@ public class StudentDTO {
     @Size(message = "La taille du mot de passe doit être comprise entre 8 et 255 caractères.", min = 8, max = 255)
     private String password;
 
-    @NotNull
+    @NotNull(message = "La date de naissance doit être renseignée.")
     private Date dateOfBirth;
 
-    private Classgroup classgroup;
+    private Long classgroupId;
 
 }

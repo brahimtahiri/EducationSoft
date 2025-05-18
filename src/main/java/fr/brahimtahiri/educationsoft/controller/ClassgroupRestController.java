@@ -55,15 +55,15 @@ public class ClassgroupRestController {
     /**
      * Met à jour une classe existante avec les nouvelles données fournies.
      *
-     * @param id            l'identifiant de la classe à mettre à jour
-     * @param newClassgroup un objet {@link ClassgroupDTO} contenant les nouvelles informations de la classe.
-     *                      L'objet est validé avant traitement.
+     * @param id                l'identifiant de la classe à mettre à jour
+     * @param updatedClassgroup un objet {@link ClassgroupDTO} contenant les nouvelles informations de la classe.
+     *                          L'objet est validé avant traitement.
      * @return l'instance de la classe {@link Classgroup} mise à jour
      * @throws ResourceNotFoundException si aucune classe n'est trouvée avec l'identifiant fourni
      */
     @PutMapping(path = "/{id}")
-    public Classgroup updateClassgroup(@PathVariable Long id, @RequestBody @Valid ClassgroupDTO newClassgroup) throws ResourceNotFoundException {
-        return this.classgroupService.updateClassgroup(id, newClassgroup);
+    public Classgroup updateClassgroup(@PathVariable Long id, @RequestBody @Valid ClassgroupDTO updatedClassgroup) throws ResourceNotFoundException {
+        return this.classgroupService.updateClassgroup(id, updatedClassgroup);
     }
 
     /**

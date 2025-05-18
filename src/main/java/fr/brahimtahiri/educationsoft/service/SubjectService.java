@@ -51,15 +51,15 @@ public class SubjectService {
     /**
      * Met à jour une matière existante avec les nouvelles données fournies.
      *
-     * @param id         l'identifiant de la matière à mettre à jour
-     * @param newSubject un objet {@link SubjectDTO} contenant les nouvelles informations de la matière
+     * @param id             l'identifiant de la matière à mettre à jour
+     * @param updatedSubject un objet {@link SubjectDTO} contenant les nouvelles informations de la matière
      * @return l'instance mise à jour de {@link Subject}
      * @throws ResourceNotFoundException si aucune matière n'est trouvée avec l'identifiant fourni
      */
-    public Subject updateSubject(Long id, SubjectDTO newSubject) throws ResourceNotFoundException {
+    public Subject updateSubject(Long id, SubjectDTO updatedSubject) throws ResourceNotFoundException {
         Subject currentSubject = this.getSubjectById(id);
 
-        currentSubject.setDenomination(newSubject.getDenomination());
+        currentSubject.setDenomination(updatedSubject.getDenomination());
 
         return this.subjectRepository.save(currentSubject);
     }

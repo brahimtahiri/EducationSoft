@@ -55,15 +55,15 @@ public class SubjectRestController {
     /**
      * Met à jour une matière existante avec les nouvelles données fournies.
      *
-     * @param id         l'identifiant de la matière à mettre à jour
-     * @param newSubject un objet {@link SubjectDTO} contenant les nouvelles informations de la matière.
-     *                   L'objet est validé avant traitement.
+     * @param id             l'identifiant de la matière à mettre à jour
+     * @param updatedSubject un objet {@link SubjectDTO} contenant les nouvelles informations de la matière.
+     *                       L'objet est validé avant traitement.
      * @return l'instance de la matière {@link Subject} mise à jour
      * @throws ResourceNotFoundException si aucune matière n'est trouvée avec l'identifiant fourni
      */
     @PutMapping(path = "/{id}")
-    public Subject updateSubject(@PathVariable Long id, @RequestBody @Valid SubjectDTO newSubject) throws ResourceNotFoundException {
-        return this.subjectService.updateSubject(id, newSubject);
+    public Subject updateSubject(@PathVariable Long id, @RequestBody @Valid SubjectDTO updatedSubject) throws ResourceNotFoundException {
+        return this.subjectService.updateSubject(id, updatedSubject);
     }
 
     /**

@@ -61,21 +61,21 @@ public class TeacherService {
     /**
      * Met à jour un enseignant existant avec les nouvelles données fournies.
      *
-     * @param id         l'identifiant de l'enseignant à mettre à jour
-     * @param newTeacher un objet {@link TeacherDTO} contenant les nouvelles informations de l'enseignant
+     * @param id             l'identifiant de l'enseignant à mettre à jour
+     * @param updatedTeacher un objet {@link TeacherDTO} contenant les nouvelles informations de l'enseignant
      * @return l'instance mise à jour de {@link Teacher}
      * @throws ResourceNotFoundException si aucun enseignant n'est trouvé avec l'identifiant fourni
      */
-    public Teacher updateTeacher(Long id, TeacherDTO newTeacher) throws ResourceNotFoundException {
+    public Teacher updateTeacher(Long id, TeacherDTO updatedTeacher) throws ResourceNotFoundException {
         Teacher currentTeacher = this.getTeacherById(id);
 
-        currentTeacher.setLastname(newTeacher.getLastname());
-        currentTeacher.setFirstname(newTeacher.getFirstname());
-        currentTeacher.setEmail(newTeacher.getEmail());
-        currentTeacher.setAddress(newTeacher.getAddress());
-        currentTeacher.setPhoneNumber(newTeacher.getPhoneNumber());
-        currentTeacher.setUsername(newTeacher.getUsername());
-        currentTeacher.setPassword(newTeacher.getPassword());
+        currentTeacher.setLastname(updatedTeacher.getLastname());
+        currentTeacher.setFirstname(updatedTeacher.getFirstname());
+        currentTeacher.setEmail(updatedTeacher.getEmail());
+        currentTeacher.setAddress(updatedTeacher.getAddress());
+        currentTeacher.setPhoneNumber(updatedTeacher.getPhoneNumber());
+        currentTeacher.setUsername(updatedTeacher.getUsername());
+        currentTeacher.setPassword(updatedTeacher.getPassword());
 
         return this.teacherRepository.save(currentTeacher);
     }

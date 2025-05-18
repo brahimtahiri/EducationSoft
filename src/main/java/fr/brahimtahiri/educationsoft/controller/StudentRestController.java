@@ -56,15 +56,15 @@ public class StudentRestController {
     /**
      * Met à jour un étudiant existant avec les nouvelles données fournies.
      *
-     * @param id         l'identifiant de l'étudiant à mettre à jour
-     * @param studentDTO un objet {@link StudentDTO} contenant les nouvelles informations de l'étudiant.
-     *                   L'objet est validé avant traitement.
+     * @param id             l'identifiant de l'étudiant à mettre à jour
+     * @param updatedStudent un objet {@link StudentDTO} contenant les nouvelles informations de l'étudiant.
+     *                       L'objet est validé avant traitement.
      * @return l'instance de l'étudiant {@link Student} mise à jour
      * @throws ResourceNotFoundException si aucun étudiant n'est trouvé avec l'identifiant fourni ou si la classe associée est introuvable
      */
     @PutMapping(path = "/{id}")
-    public Student updateStudent(@PathVariable Long id, @RequestBody @Valid StudentDTO studentDTO) throws ResourceNotFoundException {
-        return this.studentService.updateStudent(id, studentDTO);
+    public Student updateStudent(@PathVariable Long id, @RequestBody @Valid StudentDTO updatedStudent) throws ResourceNotFoundException {
+        return this.studentService.updateStudent(id, updatedStudent);
     }
 
     /**
@@ -79,6 +79,16 @@ public class StudentRestController {
         this.studentService.deleteStudent(id);
 
         return ResponseEntity.noContent().build();
+    }
+
+    /**
+     * Récupère la liste des étudiants qui ne sont associés à aucun groupe de classe.
+     *
+     * @return une liste d'instances de {@link Student} sans groupe de classe
+     */
+    @GetMapping(path = "/withoutClassgroup")
+    public List<Student> getStudentsWithoutClassgroup() {
+        return this.studentService.getStudentsWithoutClassgroup();
     }
 
     /**

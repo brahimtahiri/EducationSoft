@@ -1,5 +1,6 @@
 package fr.brahimtahiri.educationsoft.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "students")
@@ -21,6 +23,10 @@ public class Student extends User {
     @ManyToOne
     @JoinColumn(name = "classgroup_id")
     private Classgroup classgroup;
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Grading> gradings;
 
     @Builder
     public Student(String firstname, String lastname, String email, String address, String phoneNumber, String username, String password, Role role, Date dateOfBirth, Classgroup classgroup) {
